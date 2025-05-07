@@ -274,8 +274,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 632560470}
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+--- !u!1 &632560469 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+  m_PrefabInstance: {fileID: 632560468}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &632560470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632560469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836fe9e2361ef6c47918f3242da114ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1441043830
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,6 +514,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Exit Mine Entrance
       objectReference: {fileID: 0}
+    - target: {fileID: 5855986151783925605, guid: e52734c4693abbf4bb06d38e1dae7354, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6289667511103398969, guid: e52734c4693abbf4bb06d38e1dae7354, type: 3}
       propertyPath: m_LocalPosition.x
       value: 50
@@ -537,8 +561,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3452597081563027986, guid: e52734c4693abbf4bb06d38e1dae7354, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5182224607198769935}
   m_SourcePrefab: {fileID: 100100000, guid: e52734c4693abbf4bb06d38e1dae7354, type: 3}
+--- !u!1 &5182224607198769934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3452597081563027986, guid: e52734c4693abbf4bb06d38e1dae7354, type: 3}
+  m_PrefabInstance: {fileID: 5182224607198769933}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5182224607198769935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5182224607198769934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46416805adfbae640ac000802e1ba9ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: Outside
+  spawnPositionInNewScene: {x: 70, y: 101, z: 70}
 --- !u!1001 &8016033830151156018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -591,11 +637,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7307934643412399646, guid: b82cdc47843126249bff67ce25b16ca0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1206349767034390426, guid: b82cdc47843126249bff67ce25b16ca0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8016033830151156020}
   m_SourcePrefab: {fileID: 100100000, guid: b82cdc47843126249bff67ce25b16ca0, type: 3}
+--- !u!1 &8016033830151156019 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1206349767034390426, guid: b82cdc47843126249bff67ce25b16ca0, type: 3}
+  m_PrefabInstance: {fileID: 8016033830151156018}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8016033830151156020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8016033830151156019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46416805adfbae640ac000802e1ba9ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: Room 2
+  spawnPositionInNewScene: {x: 50, y: 100, z: 90}
 --- !u!1001 &8927541060176051176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -604,6 +676,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3776150890064216484, guid: 0b4e7ab3b2b383e45acc37c8aee487ba, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6196356106468794080, guid: 0b4e7ab3b2b383e45acc37c8aee487ba, type: 3}
       propertyPath: m_LocalPosition.x
       value: 85
@@ -651,8 +727,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8211857803728345543, guid: 0b4e7ab3b2b383e45acc37c8aee487ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8927541060176051178}
   m_SourcePrefab: {fileID: 100100000, guid: 0b4e7ab3b2b383e45acc37c8aee487ba, type: 3}
+--- !u!1 &8927541060176051177 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8211857803728345543, guid: 0b4e7ab3b2b383e45acc37c8aee487ba, type: 3}
+  m_PrefabInstance: {fileID: 8927541060176051176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8927541060176051178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8927541060176051177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46416805adfbae640ac000802e1ba9ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: Room 3
+  spawnPositionInNewScene: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -661,7 +759,7 @@ SceneRoots:
   - {fileID: 632310543}
   - {fileID: 632560468}
   - {fileID: 5182224607198769933}
-  - {fileID: 4650680480444454175}
-  - {fileID: 4665263096048765342}
   - {fileID: 8016033830151156018}
   - {fileID: 8927541060176051176}
+  - {fileID: 4650680480444454175}
+  - {fileID: 4665263096048765342}

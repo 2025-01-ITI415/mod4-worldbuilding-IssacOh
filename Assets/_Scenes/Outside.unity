@@ -479,6 +479,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FPSController
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 70
@@ -749,7 +753,6 @@ GameObject:
   - component: {fileID: 1421069263}
   - component: {fileID: 1421069262}
   - component: {fileID: 1421069261}
-  - component: {fileID: 1421069264}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -831,18 +834,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1421069264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1421069260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec50a73d372704baf961d1ace89af307, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1485506194
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,8 +1514,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6585491805704471833, guid: a1bedf755d425d04fb0bd23ccc2f4ada, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4706547455255157493}
   m_SourcePrefab: {fileID: 100100000, guid: a1bedf755d425d04fb0bd23ccc2f4ada, type: 3}
+--- !u!1 &4706547455255157492 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6585491805704471833, guid: a1bedf755d425d04fb0bd23ccc2f4ada, type: 3}
+  m_PrefabInstance: {fileID: 4706547455255157491}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4706547455255157493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4706547455255157492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46416805adfbae640ac000802e1ba9ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: Room 1
+  spawnPositionInNewScene: {x: 50, y: 101, z: 5}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
