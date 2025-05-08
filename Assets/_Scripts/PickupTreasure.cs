@@ -12,13 +12,19 @@ public class PickupTreasure : MonoBehaviour
 
     [Header("Throw Settings")]
     [SerializeField] private float throwForce = 10f;
-    [SerializeField] private float throwUpwardForce = 3f;  // Additional upward velocity for better arc
+    [SerializeField] private float throwUpwardForce = 3f;
+
+    [Header("Audio Clips")]
+    [SerializeField] private AudioClip beforePickupClip;
+    [SerializeField] private AudioClip afterPickupClip;
+    [SerializeField] private AudioClip throwClip;
 
     private bool isHeld = false;
     private Transform playerCamera;
     private Transform holdOffset;
     private Rigidbody rb;
     private Collider treasureCollider;
+    private AudioSource audioSource;
 
     void OnEnable()
     {
@@ -34,12 +40,15 @@ public class PickupTreasure : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         treasureCollider = GetComponent<Collider>();
-        
+        audioSource = GetComponent<AudioSource>();
+
         if (rb != null)
         {
-            rb.isKinematic = true; // Initially, make it kinematic when held
-            rb.useGravity = false; // Disable gravity while held
+            rb.isKinematic = true;
+            rb.useGravity = false;
         }
+
+        
     }
 
     void Update()
@@ -50,7 +59,6 @@ public class PickupTreasure : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, holdOffset.rotation, followSpeed * Time.deltaTime);
         }
 
-        // Press Q to throw the treasure
         if (isHeld && Input.GetKeyDown(KeyCode.Q))
         {
             ThrowTreasure();
@@ -71,16 +79,28 @@ public class PickupTreasure : MonoBehaviour
             isHeld = true;
             TreasurePickedUp = true;
 
+            // Audio: stop before sound, play after sound
+            if (audioSource != null)
+            {
+                audioSource.Stop();
+                if (afterPickupClip != null)
+                {
+                    audioSource.clip = afterPickupClip;
+                    audioSource.loop = true;
+                    audioSource.Play();
+                }
+            }
+
             if (rb != null)
             {
-                rb.isKinematic = true;  // Keep it kinematic when held (no physics interaction)
-                rb.useGravity = false;  // Disable gravity when held
+                rb.isKinematic = true;
+                rb.useGravity = false;
             }
 
             if (treasureCollider != null)
-                treasureCollider.enabled = false;  // Disable collider to avoid interaction with other objects
+                treasureCollider.enabled = false;
 
-            DontDestroyOnLoad(gameObject);  // Keeps treasure across scenes
+            DontDestroyOnLoad(gameObject);
         }
     }
 
@@ -88,7 +108,6 @@ public class PickupTreasure : MonoBehaviour
     {
         if (isHeld)
         {
-            // Find new player camera in new scene
             GameObject player = GameObject.FindWithTag("Player");
             if (player != null)
             {
@@ -113,19 +132,25 @@ public class PickupTreasure : MonoBehaviour
 
     private void ThrowTreasure()
     {
-        // Remove the hold and make it physics-based again
         isHeld = false;
-        rb.isKinematic = false;  // Allow physics to take over (no longer kinematic)
-        rb.useGravity = true;    // Enable gravity so it can fall naturally
 
-        // Enable the collider again for proper interaction with the environment
+        if (rb != null)
+        {
+            rb.isKinematic = false;
+            rb.useGravity = true;
+
+            Vector3 throwDirection = playerCamera.forward;
+            rb.velocity = throwDirection * throwForce + Vector3.up * throwUpwardForce;
+        }
+
         if (treasureCollider != null)
             treasureCollider.enabled = true;
 
-        // Set the velocity for the throw (based on the camera's forward direction)
-        Vector3 throwDirection = playerCamera.forward;
-
-        // Apply velocity to the Rigidbody for throwing the treasure
-        rb.velocity = throwDirection * throwForce + Vector3.up * throwUpwardForce;
+        if (audioSource != null && throwClip != null)
+        {
+            audioSource.Stop();
+            audioSource.loop = false;
+            audioSource.PlayOneShot(throwClip);
+        }
     }
 }

@@ -15,6 +15,7 @@ public class LoadSceneOnTouch : MonoBehaviour
             SceneData.spawnRotation = Quaternion.Euler(spawnRotationEuler);
             SceneData.useCustomSpawn = true;
             SceneManager.LoadScene(sceneToLoad);
+            Time.timeScale = 1f;
         }
     }
 }
