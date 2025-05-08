@@ -19,6 +19,8 @@ public class PickupTreasure : MonoBehaviour
     [SerializeField] private AudioClip afterPickupClip;
     [SerializeField] private AudioClip throwClip;
 
+    public GameObject promptUI;
+
     private bool isHeld = false;
     private Transform playerCamera;
     private Transform holdOffset;
@@ -57,6 +59,7 @@ public class PickupTreasure : MonoBehaviour
         {
             transform.position = Vector3.Lerp(transform.position, holdOffset.position, followSpeed * Time.deltaTime);
             transform.rotation = Quaternion.Lerp(transform.rotation, holdOffset.rotation, followSpeed * Time.deltaTime);
+            promptUI.SetActive(false);
         }
 
         if (isHeld && Input.GetKeyDown(KeyCode.Q))
@@ -153,4 +156,5 @@ public class PickupTreasure : MonoBehaviour
             audioSource.PlayOneShot(throwClip);
         }
     }
+    
 }
