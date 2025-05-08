@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.43632925, g: 0.47471148, b: 0.5147119, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -350,13 +350,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 603275636}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.96225023, y: -0.022557477, z: 0.25783414, w: 0.08418566}
   m_LocalPosition: {x: 85.85388, y: 99.18921, z: 84.783875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: -550, y: -30, z: 0}
 --- !u!1 &832000099 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
@@ -374,19 +374,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 836fe9e2361ef6c47918f3242da114ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &832000101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832000099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61225a8505aab77429dca77c38b5b459, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  countText: {fileID: 0}
 --- !u!1001 &870642482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -508,9 +495,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 832000100}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 832000101}
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
 --- !u!1 &1056161948
 GameObject:
@@ -871,7 +855,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1228553458758826857, guid: b0a92b4285b1d2b43b5924b1432e4b31, type: 3}
       propertyPath: m_Name
-      value: Egg
+      value: Egg 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288324478597336102, guid: b0a92b4285b1d2b43b5924b1432e4b31, type: 3}
+      propertyPath: eggID
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3453400076700196710, guid: b0a92b4285b1d2b43b5924b1432e4b31, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3453400076700196710, guid: b0a92b4285b1d2b43b5924b1432e4b31, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949840417964676349, guid: b0a92b4285b1d2b43b5924b1432e4b31, type: 3}
+      propertyPath: m_Name
+      value: PromptUI
       objectReference: {fileID: 0}
     - target: {fileID: 5997740396442923363, guid: b0a92b4285b1d2b43b5924b1432e4b31, type: 3}
       propertyPath: m_LocalPosition.x
@@ -916,10 +916,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8709091530810735092, guid: b0a92b4285b1d2b43b5924b1432e4b31, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0a92b4285b1d2b43b5924b1432e4b31, type: 3}
 --- !u!1001 &8623648157445705851
 PrefabInstance:
