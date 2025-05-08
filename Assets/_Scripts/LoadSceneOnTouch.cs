@@ -3,17 +3,17 @@ using UnityEngine.SceneManagement;
 
 public class LoadSceneOnTouch : MonoBehaviour
 {
-    public string sceneToLoad;                 // The name of the scene to load
-    public Vector3 spawnPositionInNewScene;    // Position to spawn the player in the new scene
+    public string sceneToLoad;
+    public Vector3 spawnPositionInNewScene;
+    public Vector3 spawnRotationEuler; // Use inspector to input e.g., (0, 90, 0)
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))  // If the player touches the trigger
+        if (other.CompareTag("Player"))
         {
-            // Store the desired spawn position
             SceneData.spawnPosition = spawnPositionInNewScene;
-            
-            // Load the scene
+            SceneData.spawnRotation = Quaternion.Euler(spawnRotationEuler);
+            SceneData.useCustomSpawn = true;
             SceneManager.LoadScene(sceneToLoad);
         }
     }
